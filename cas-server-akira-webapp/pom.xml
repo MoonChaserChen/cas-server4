@@ -9,20 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
-    <name>Jasig CAS - Uber WAR</name>
+    <name>Jasig CAS - Akira WAR</name>
 
-    <artifactId>cas-server-uber-webapp</artifactId>
+    <groupId>ink.akira.cas</groupId>
+    <artifactId>cas-server-akira-webapp</artifactId>
+    <version>4.0.8-SNAPSHOT</version>
 
     <build>
-		<plugins>
-			<plugin>
-			     <artifactId>maven-war-plugin</artifactId>
-                 <configuration>
-                     <warName>cas</warName>
-                 </configuration>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>cas</warName>
+                </configuration>
             </plugin>
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -83,7 +85,8 @@
         </dependency>
     </dependencies>
 
-  <properties>
-    <cs.dir>${project.parent.basedir}</cs.dir>
-  </properties>
+
+    <properties>
+        <cs.dir>${project.parent.basedir}</cs.dir>
+    </properties>
 </project>
