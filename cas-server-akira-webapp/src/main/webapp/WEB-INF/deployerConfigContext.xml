@@ -134,14 +134,10 @@
     Bean that defines the attributes that a service may return.  This example uses the Stub/Mock version.  A real implementation
     may go against a database or LDAP server.  The id should remain "attributeRepository" though.
     +-->
-    <bean id="attributeRepository" class="org.jasig.services.persondir.support.StubPersonAttributeDao"
-            p:backingMap-ref="attrRepoBackingMap" />
-    
-    <util:map id="attrRepoBackingMap">
-        <entry key="uid" value="uid" />
-        <entry key="eduPersonAffiliation" value="eduPersonAffiliation" /> 
-        <entry key="groupMembership" value="groupMembership" />
-    </util:map>
+    <bean id="attributeRepository" class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
+        <constructor-arg ref="datasource"/>
+        <constructor-arg value="select ul.id as user_id, ul.user_name, ul.email, ul.mobile, up.school_name, up.company_name from user_login ul join user_profile up on ul.id = up.user_id where ul.user_name = ?"/>
+    </bean>
 
     <!-- 
     Sample, in-memory data store for the ServiceRegistry. A real implementation
