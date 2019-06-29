@@ -105,14 +105,6 @@
        | * org.jasig.cas.adaptors.x509.authentication.handler.support.X509CredentialsAuthenticationHandler
        | * org.jasig.cas.support.spnego.authentication.handler.support.JCIFSSpnegoAuthenticationHandler
        -->
-    <!--<bean id="primaryAuthenticationHandler"
-          class="org.jasig.cas.authentication.AcceptUsersAuthenticationHandler">
-        <property name="users">
-            <map>
-                <entry key="casuser" value="Mellon"/>
-            </map>
-        </property>
-    </bean>-->
 
     <bean id="datasource" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
         <property name="URL" value="jdbc:mysql://localhost:3306/user_center"/>
