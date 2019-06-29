@@ -105,13 +105,24 @@
        | * org.jasig.cas.adaptors.x509.authentication.handler.support.X509CredentialsAuthenticationHandler
        | * org.jasig.cas.support.spnego.authentication.handler.support.JCIFSSpnegoAuthenticationHandler
        -->
-    <bean id="primaryAuthenticationHandler"
+    <!--<bean id="primaryAuthenticationHandler"
           class="org.jasig.cas.authentication.AcceptUsersAuthenticationHandler">
         <property name="users">
             <map>
                 <entry key="casuser" value="Mellon"/>
             </map>
         </property>
+    </bean>-->
+
+    <bean id="datasource" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
+        <property name="URL" value="jdbc:mysql://localhost:3306/user_center"/>
+        <property name="user" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <bean id="primaryAuthenticationHandler" class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
+        <property name="dataSource" ref="datasource"/>
+        <property name="sql" value="SELECT password FROM user_login WHERE user_name = ?"/>
     </bean>
 
     <!-- Required for proxy ticket mechanism -->
