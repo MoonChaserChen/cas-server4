@@ -20,19 +20,12 @@
 --%>
 <jsp:directive.include file="includes/top.jsp" />
 
-<c:if test="${not pageContext.request.secure}">
-  <div id="msg" class="errors">
-    <h2>Non-secure Connection</h2>
-    <p>You are currently accessing CAS over a non-secure connection.  Single Sign On WILL NOT WORK.  In order to have single sign on work, you MUST log in over HTTPS.</p>
-  </div>
-</c:if>
-
 <div class="box" id="login">
   <form:form method="post" id="fm1" commandName="${commandName}" htmlEscape="true">
 
     <form:errors path="*" id="msg" cssClass="errors" element="div" htmlEscape="false" />
   
-    <h2>陈二狗<spring:message code="screen.welcome.instructions" /></h2>
+    <h2><spring:message code="screen.welcome.instructions" /></h2>
   
     <section class="row">
       <label for="username"><spring:message code="screen.welcome.label.netid" /></label>

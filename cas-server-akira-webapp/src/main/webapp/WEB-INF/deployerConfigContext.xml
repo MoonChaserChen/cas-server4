@@ -107,7 +107,7 @@
        -->
 
     <bean id="datasource" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
-        <property name="URL" value="jdbc:mysql://localhost:3306/user_center"/>
+        <property name="URL" value="jdbc:mysql://localhost:3306/user_center?useSSL=true"/>
         <property name="user" value="root"/>
         <property name="password" value="root"/>
     </bean>
