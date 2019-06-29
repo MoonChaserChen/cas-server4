@@ -42,6 +42,13 @@
             <version>${project.version}</version>
         </dependency>
 
+        <!--cas-server-support-oauth-->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-oauth</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!--druid-->
         <dependency>
             <groupId>com.alibaba</groupId>
